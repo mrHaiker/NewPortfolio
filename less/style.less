@@ -9,11 +9,21 @@
 
 body {
   font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  height: 100%;
 }
 
 header {
   height: 100vh;
-  background: #1b1d20;
+  overflow: hidden;
+  .container {
+    background: url(http://www.themes.alessioatzeni.com/html/brushed/_include/img/slider-images/image01.jpg) no-repeat center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
   .logo {
     width: 500px;
     height: 150px;
@@ -29,16 +39,12 @@ header {
     z-index: 2;
     text-transform: uppercase;
   }
-}
-
-section {
-  height: 4000px;
-  background: #2f3238;
-  margin-top: -46px;
-  padding: 0 15px;
   .btn-group {
+    position: absolute;
+    bottom: 0;
     height: 46px;
     width: 100%;
+    background: #2f3238;
     .btn-down {
       float: right;
       background: #26292e;
@@ -56,6 +62,13 @@ section {
       }
     }
   }
+}
+
+section {
+  height: 4000px;
+  background: #2f3238;
+  padding: 0 15px;
+  z-index: 12;
   nav {
     background: #26292E;
     height: 54px;

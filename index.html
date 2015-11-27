@@ -28,20 +28,21 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   </head>
-  <body>
+  <body ng-controller="ScrollController">
 
   <header id="home">
-    <div class="logo">Brashed {{2+2}}
+    <div class="container">
+      <div class="logo">Brashed {{2+2}}</div>
+    </div>
+    <div class="btn-group">
+      <div class="btn-down" ng-click='gotoMenu()'>
+        <i class="fa fa-angle-down"></i>
+      </div>
     </div>
   </header>
 
-    <section ng-controller="ScrollController">
+    <section>
       <div class="row">
-        <div class="btn-group">
-          <div class="btn-down" ng-click='gotoMenu()'>
-            <i class="fa fa-angle-down"></i>
-          </div>
-        </div>
         <nav>
           <div class="brand">Brashed</div>
           <ul id="menu" class="visible-sm visible-md visible-lg">
