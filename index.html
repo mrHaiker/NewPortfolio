@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app>
+<html lang="en" data-ng-app="portfolioApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,8 @@
 
     <script src="js/prefixfree.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
+
+    <script src="js/modules.js"></script>
     <script src="js/controllers.js"></script>
 
     <!--[if lt IE 9]>
@@ -28,29 +30,33 @@
   </head>
   <body>
 
-  <header>
-    <div class="logo">Brashed {{2+2}}</div>
+  <header id="home">
+    <div class="logo">Brashed {{2+2}}
+    </div>
   </header>
-    <section  ng-controller="DemoCtrl">
+
+    <section ng-controller="ScrollController">
       <div class="row">
         <div class="btn-group">
-          <div class="btn-down">
+          <div class="btn-down" ng-click='gotoMenu()'>
             <i class="fa fa-angle-down"></i>
           </div>
         </div>
         <nav>
           <div class="brand">Brashed</div>
-          <ul class="menu">
-            <li><a href="">Home</a></li>
-            <li><a href="">My works</a></li>
-            <li> <a href="">contacts</a></li>
+          <ul id="menu" class="visible-sm visible-md visible-lg">
+            <li><a href="" ng-click="gotoTop()">Home</a></li>
+            <li><a href="" ng-click="my-works">My works</a></li>
+            <li><a href="" ng-click="contacts">contacts</a></li>
           </ul>
         </nav>
       </div>
     </section>
 
+    <!--Angular scripts-->
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
