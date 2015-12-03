@@ -2,9 +2,12 @@
 
 @red: #DE5E60;
 
+html {
+
+}
 
 .transition {
-  transition: all .3s ease;
+  transition: all .4s ease;
 }
 
 body {
@@ -17,27 +20,37 @@ header {
   height: 100vh;
   overflow: hidden;
   .container {
-    background: url(http://www.themes.alessioatzeni.com/html/brushed/_include/img/slider-images/image01.jpg) no-repeat center;
+    background: url(../img/image01.jpg) no-repeat center;
     background-size: cover;
     height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
-  }
-  .logo {
-    width: 500px;
-    height: 150px;
-    font-size: 50px;
-    color: #fff;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -250px;
-    margin-top: -125px;
-    text-align: center;
-    line-height: 150px;
-    z-index: 2;
-    text-transform: uppercase;
+    padding: 0 !important;
+    &::after {
+      content: '';
+    }
+    &::after {
+      background: #333;
+      opacity: .5;
+      width: 100%;
+      height: 100%;
+    }
+    .logo {
+      width: 500px;
+      height: 150px;
+      font-size: 50px;
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -250px;
+      margin-top: -125px;
+      text-align: center;
+      line-height: 150px;
+      z-index: 2;
+      text-transform: uppercase;
+    }
   }
   .btn-group {
     position: absolute;
@@ -45,6 +58,11 @@ header {
     height: 46px;
     width: 100%;
     background: #2f3238;
+    .transition;
+    @media screen and (max-width: 992px) {
+      height: 60px;
+      .transition;
+    }
     .btn-down {
       float: right;
       background: #26292e;
@@ -60,22 +78,33 @@ header {
         background: @red;
         .transition;
       }
+      @media screen and(max-width: 992px){
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        font-size: 28px;
+        .transition;
+      }
     }
   }
 }
 
-section {
-  height: 4000px;
+#my-works {
+  height: 100%;
   background: #2f3238;
   padding: 0 15px;
   z-index: 12;
   nav {
+    top: 0;
+    width: 100%;
     background: #26292E;
     height: 54px;
     text-transform: uppercase;
     line-height: 54px;
     font-weight: bold;
     border-bottom: 1px solid #222;
+    z-index: 1000;
+    .transition;
     .brand {
       float: left;
       height: 100%;
@@ -96,6 +125,7 @@ section {
           color: #9d9d9d;
           text-decoration: none;
           padding: 15px 0;
+          cursor: pointer;
           .transition;
           &:hover {
             color: @red;
@@ -106,4 +136,79 @@ section {
       }
     }
   }
+  .title {
+    margin-top: 80px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #dedede;
+    font-size: 24px;
+    font-weight: 200;
+    h2 {
+      font-size: 48px;
+      font-weight: 300;
+    }
+    a {
+      color: @red;
+    }
+  }
+  .windows {
+    height: 100%;
+    width: 950px;
+    margin: 80px auto;
+    @media screen and (max-width: 767px) {
+      width: 90%;
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      width: 700px;
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      width: 900px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 1100px;
+    }
+
+    .plates {
+      background: #555;
+      margin-bottom: 30px;
+      overflow: hidden;
+      align-content: center;
+      height: 260px;
+      box-shadow: 10px 20px 17px rgba(0,0,0,.2);
+      background-size: cover !important;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0);
+      .transition;
+      @media screen and (max-width: 767px) {
+        height: 350px;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        height: 230px;
+      }
+    }
+  }
+}
+
+#about-me {
+  height: 1200px;
+  background: #26292E;
+}
+
+.active-link {
+  color: @red!important;
+  .transition;
+}
+
+// Pictures of window
+.pic1 {
+  background: url("../img/mask8.png") no-repeat center !important;
+}
+.pic2 {
+  background: url("../img/mask_game.png") no-repeat center !important;
+}
+.pic3 {
+  background: url("../img/mask6.png") no-repeat center !important;
+}
+.pic4 {
+  background: url("../img/mask7.png") no-repeat center !important;
 }
