@@ -9,6 +9,18 @@ var main = function () {
         $('body, html').animate({scrollTop: 0}, 400);
 
     });
+    $('.menuBtn').click(function () {   // обработчик клика по Menu Bars
+        if($('#menu').hasClass('active-menu')) {
+            $('#menu').removeClass('active-menu');
+        } else {
+            $('#menu').addClass('active-menu');
+        }
+        if($(this).hasClass('open')) {
+            $(this).removeClass('open');
+        } else {
+            $(this).addClass('open');
+        }
+    });
     $(window).scroll(function () {
         var scrollTopWindow = $(this).scrollTop();
         var heightHeader = $('header').height();
