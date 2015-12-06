@@ -37,7 +37,7 @@ var main = function () {
         screen.animate({scrollTop: heightHeader+heightWork+heightAbout}, 400);
         closeMobileMenu();
     });
-    $('#toTop').click(function () {
+    $('.toTop').click(function () {
         screen.animate({scrollTop: 0}, 400);
     });
 
@@ -77,9 +77,9 @@ var main = function () {
         $('body').css('margin-top', marginTop);
 
         if($(this).scrollTop() > heightHeader) {
-            $('#toTop').fadeIn();
+            $('.toTop').fadeIn();
         } else {
-            $('#toTop').fadeOut();
+            $('.toTop').fadeOut();
         }
 
         if (scrollTopWindow >= heightHeader) {

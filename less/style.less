@@ -317,26 +317,41 @@ header {
   }
 }
 
-#toTop {
+.toTop {
   width: 46px;
   height: 46px;
-  background: @red;
+  background: @darkBlue;
+  opacity: .5;
   position: fixed;
-  right: 0;
-  bottom: 0;
+  right: 1px;
+  bottom: 1px;
   color: #dedede;
   text-align: center;
   line-height: 46px;
   display: none;
   font-size: 22px;
+  border: 1px solid @red;
   @media screen and(max-width: 992px) {
     font-size: 28px;
     height: 50px;
-    width: 55px;
+    width: 50px;
     line-height: 50px;
-
   }
 }
+
+.my-socials {
+  background: @darkBlue;
+  height: 200px;
+}
+
+footer {
+  background: @blue;
+  height: 60px;
+}
+
+
+
+//
 
 .active-link {
   color: @red!important;
