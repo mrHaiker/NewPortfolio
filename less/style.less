@@ -59,21 +59,21 @@ header {
     bottom: 0;
     height: 46px;
     width: 100%;
-    background: #2f3238;
+    background: @blue;
     .transition;
     @media screen and (max-width: 992px) {
-      height: 60px;
+      height: 50px;
       .transition;
     }
     .btn-down {
       float: right;
-      background: #26292e;
+      background: @darkBlue;
       height: 46px;
       width: 46px;
       color: #dedede;
       text-align: center;
       line-height: 46px;
-      font-size: 18px;
+      font-size: 22px;
       cursor: pointer;
       .transition;
       &:hover {
@@ -81,9 +81,9 @@ header {
         .transition;
       }
       @media screen and(max-width: 992px){
-        height: 60px;
-        width: 60px;
-        line-height: 60px;
+        height: 50px;
+        width: 55px;
+        line-height: 50px;
         font-size: 28px;
         .transition;
       }
@@ -164,7 +164,7 @@ header {
         background: url(../img/menu-mobile.png) 0 0 no-repeat;
         width: 16px;
         height: 16px;
-        margin: 20px 22px 0 0;
+        margin: 20px 20px 0 0;
         float: right;
         transform: rotate(0deg);
         transition: transform .3s ease;
@@ -317,6 +317,27 @@ header {
   }
 }
 
+#toTop {
+  width: 46px;
+  height: 46px;
+  background: @red;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: #dedede;
+  text-align: center;
+  line-height: 46px;
+  display: none;
+  font-size: 22px;
+  @media screen and(max-width: 992px) {
+    font-size: 28px;
+    height: 50px;
+    width: 55px;
+    line-height: 50px;
+
+  }
+}
+
 .active-link {
   color: @red!important;
   .transition;
@@ -332,6 +353,7 @@ header {
   color: #dedede;
   font-size: 20px;
   font-weight: 200;
+  padding: 0 15px;
   h2 {
     font-size: 42px;
     font-weight: 300;

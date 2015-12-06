@@ -37,6 +37,9 @@ var main = function () {
         screen.animate({scrollTop: heightHeader+heightWork+heightAbout}, 400);
         closeMobileMenu();
     });
+    $('#toTop').click(function () {
+        screen.animate({scrollTop: 0}, 400);
+    });
 
 
 
@@ -52,6 +55,8 @@ var main = function () {
             menuToggle.addClass('open');
         }
     });
+
+
 
     // обработчик собития Scroll
     $(window).scroll(function () {
@@ -70,6 +75,12 @@ var main = function () {
         }
         navigation.css('position',position);
         $('body').css('margin-top', marginTop);
+
+        if($(this).scrollTop() > heightHeader) {
+            $('#toTop').fadeIn();
+        } else {
+            $('#toTop').fadeOut();
+        }
 
         if (scrollTopWindow >= heightHeader) {
             $('#my-work').addClass('active-link');
