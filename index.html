@@ -41,12 +41,14 @@
       <div class="row">
         <nav id="navigation">
           <div class="brand">Brashed</div>
-          <div class="menuBtn visible-xs"></i></div>
+          <div class="menu visible-xs">
+            <div class="toggle"></i></div>
+          </div>
           <ul id="menu">
             <li><a id="btn-home">Home</a></li>
             <li><a id="my-work">My work</a></li>
             <li><a id="about">about</a></li>
-            <li><a id="contacts">Contacts</a></li>
+            <li><a id="contactNav">Contacts</a></li>
           </ul>
         </nav>
 
@@ -79,6 +81,34 @@
         <div class="title">
           <h2>Обо мне</h2>
           <p>Я Front-End разработчик</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="row">
+        <div class="title">
+          <h2>Мои контакты</h2>
+          <p>Вы можите написать мне письмо с помощью формы обратной связи или найти меня в одной из
+          соц. сетей</p>
+        </div>
+        <div class="feedback">
+          <div class="row">
+            <div class="col-md-9">
+              <form>
+                <input id="name" type="name" placeholder="Full name">
+                <input id="email" type="email" placeholder="Email Address">
+                <textarea id="textArea" name="message" cols="30" rows="10" placeholder="Your message"></textarea>
+                <div id="submit"><p>Submit</p></div>
+              </form>
+            </div>
+            <div class="details col-md-3">
+              <h2>Contact details</h2>
+              <a href="">virexom@gmail.com</a>
+              <p>Lorem ipsum.</p>
+              <p>Lorem ipsum.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
