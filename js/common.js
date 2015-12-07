@@ -32,7 +32,7 @@
             })
             .done(function(msg) {
                 if(msg === "OK"){
-                    //var result = "<div class='bg-success'>Ваше сообщение отправленно, ожидайте ответа!</div>"
+                    var result = "<div class='bg-success'>Ваше сообщение отправленно, ожидайте ответа!</div>"
                     form.html(result);
                 }else{
                     form.html(msg);
