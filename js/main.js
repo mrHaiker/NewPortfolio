@@ -40,9 +40,6 @@ var main = function () {
     $('.toTop').click(function () {
         screen.animate({scrollTop: 0}, 400);
     });
-
-
-
     $('.menu').click(function () {   // обработчик клика по Menu Bars
         if((menu).hasClass('active-menu')) {
             (menu).removeClass('active-menu');
@@ -55,7 +52,6 @@ var main = function () {
             menuToggle.addClass('open');
         }
     });
-
 
 
     // обработчик собития Scroll
