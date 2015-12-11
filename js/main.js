@@ -96,7 +96,6 @@ var main = function () {
         } else {
             $('#contactNav').removeClass('active-link');
         }
-
     });
 
 };
