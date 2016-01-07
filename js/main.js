@@ -12,6 +12,8 @@ var main = function () {
         menuToggle.removeClass('open');
     }
 
+    createPlates();
+
 //************************************** Собития **************************************
     $('.btn-down').click(function () {
         screen.animate({scrollTop: $('header').height()}, 400);
@@ -96,6 +98,34 @@ var main = function () {
         } else {
             $('#contactNav').removeClass('active-link');
         }
+    });
+
+    $(document).on('click', '.plates', function () {
+        var $id = $(this).attr('id');
+        var $preview = $('<div>').addClass('preview');
+        var $windowHeight = $(window).height();
+        $.getJSON('json/title.json', function (data) {
+            for (var i = 0; i < data.length; i++) {
+                if(data[i].name == $id) {
+                    console.log(data[i]);
+                }
+            }
+
+            $preview.css({
+                'background': 'rgba(0,0,0,.75)',
+                'zIndex': 1200
+            });
+            $('body').append($preview);
+            $preview.append($('<div>').addClass('title col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4'));
+            setMarginTop($('.preview .title'));
+        });
+
+        console.log($windowHeight);
+
+    });
+
+    $(window).resize(function(){    // Применяет стиль при изминении высоты окна
+        setMarginTop($('.preview .title'));
     });
 
 };

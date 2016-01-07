@@ -6,6 +6,8 @@
 @darkBlueBorder: #1d1e23;
 @colorText: #c4c4c4;
 
+@textColor: #9D9D9D;
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -33,7 +35,6 @@ header {
     position: absolute;
     overflow: hidden;
     padding: 0 !important;
-    z-index: -2;
     .transition;
     &::after {
       content: '';
@@ -212,7 +213,7 @@ header {
     }
     .plates {
       position: relative;
-      background: #555;
+      background-position: center !important;
       margin-bottom: 30px;
       overflow: hidden;
       align-content: center;
@@ -250,6 +251,9 @@ header {
         }
         .data {
           float: right;
+          i {
+            margin-right: 5px;
+          }
         }
       }
     }
@@ -264,6 +268,14 @@ header {
     .wrapper {
       text-align: left;
       margin: 0 auto;
+      background: @blue;
+      padding: 15px;
+      box-shadow: 10px 20px 17px rgba(0, 0, 0, .2);
+      color: @textColor;
+      
+      hr {
+        border-top: 1px solid @textColor;
+      }
 
       @media screen and (max-width: 767px) {
         width: 90%;
@@ -496,16 +508,16 @@ footer {
   }
 }
 
-// Pictures of window
-.pic1 {
-  background: url("../img/mask8.png") no-repeat center !important;
-}
-.pic2 {
-  background: url("../img/mask_game.png") no-repeat center !important;
-}
-.pic3 {
-  background: url("../img/mask6.png") no-repeat center !important;
-}
-.pic4 {
-  background: url("../img/mask7.png") no-repeat center !important;
+.preview {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  z-index: -2;
+  .transition;
+  .title {
+    background: red;
+    height: 400px;
+  }
 }
