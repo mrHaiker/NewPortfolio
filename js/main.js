@@ -67,14 +67,15 @@ var main = function () {
         heightWork = $('#my-works').height();
         heightAbout = $('#about-me').height();
 
+        positionHeader();
 
-        if(scrollTopWindow >= heightHeader) {
-            position = 'fixed';
-            marginTop = navigation.height();
-        }
-
-        navigation.css('position',position);
-        $('body').css('margin-top', marginTop);
+        //if(scrollTopWindow >= heightHeader) {
+        //    position = 'fixed';
+        //    marginTop = navigation.height();
+        //}
+        //
+        //navigation.css('position',position);
+        //$('body').css('margin-top', marginTop);
 
         if($(this).scrollTop() > heightHeader) {
             $('.toTop').fadeIn();
@@ -104,13 +105,10 @@ var main = function () {
 
     $(document).on('click', '.plates', function () {
         var $id = $(this).attr('id');
-        //var $preview = $('<div>').addClass('preview');
         var $title = $('<div>').addClass('title col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4');
-        var $windowHeight = $(window).height();
         $.getJSON('json/title.json', function (data) {
             for (var i = 0; i < data.length; i++) {
                 if(data[i].name == $id) {
-                    console.log(data[i]);
                     var $preview = $('<div>').addClass('preview').css({
                         'background': 'rgba(0,0,0,.75)',
                         'zIndex': 1200
@@ -121,25 +119,18 @@ var main = function () {
                                 .append($('<div>').addClass('col-xs-12 col-sm-6 pic').css('background', 'url(img/'+data[i].name_pic+') no-repeat'))
                                 .append($('<div>').addClass('col-xs-12 col-sm-6 description').text(data[i].full_description)
                                     .append($('<a>').attr('href', data[i].link).text('Перейти к проектру')))));
+
                     $('body').append($preview);
                 }
             }
 
-
-
-
-
-
-
             setMarginTop($('.preview .title'));
         });
-
-        console.log($windowHeight);
-
     });
 
     $(window).resize(function(){    // Применяет стиль при изминении высоты окна
         setMarginTop($('.preview .title'));
+        positionHeader();
     });
 
     // кнопка закрытия окна с preview

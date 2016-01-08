@@ -29,3 +29,18 @@ function setMarginTop (elem) {
 
     $(elem).css('marginTop', ($windowHeight-$elementHeight)/2);
 }
+
+function positionHeader () {
+    var scrollTopWindow = $(this).scrollTop();
+    var position = 'relative';
+    var marginTop = 0;
+    var navigation = $('#navigation');
+    var heightHeader = $('header').height();
+
+    if(scrollTopWindow >= heightHeader) {
+        position = 'fixed';
+        marginTop = navigation.height();
+    }
+    navigation.css('position',position);
+    $('body').css('margin-top', marginTop);
+}
