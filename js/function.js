@@ -2,7 +2,6 @@ function createPlates () {
     $.getJSON('json/title.json', function (data) {
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
-            var url = 'url("../img/'+item.name_pic+')"';
             var $plate = $('<div>').addClass('col-sm-6 col-md-4')
                 .append($('<div>').addClass('plates')
                     .attr('id', item.name)
@@ -23,6 +22,10 @@ function setMarginTop (elem) {
     var $windowHeight = $(window).height();
     var $elementHeight = $(elem).height();
 
+    if($elementHeight > $windowHeight) {
+        $(elem).css('height', $elementHeight = $windowHeight-30);
+        $('.title .description').css('height', $elementHeight);
+    }
+
     $(elem).css('marginTop', ($windowHeight-$elementHeight)/2);
 }
-

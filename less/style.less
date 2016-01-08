@@ -17,6 +17,30 @@ ul {
   transition: all .4s ease;
 }
 
+
+// шрифты
+@font-face {
+  font-family: 'icomoon';
+  src: url(../fonts/icomoon.ttf),
+       url(../fonts/icomoon.woff);
+}
+
+.moon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.icon-close:before {
+  content: "\e901";
+}
+
+// ----------
+
 body {
   font-family: 'Titillium Web', sans-serif;
   font-weight: 300;
@@ -26,7 +50,7 @@ body {
 header {
   height: 100vh;
   overflow: hidden;
-  min-height: 410px;
+  min-height: 210px;
   .container {
     background:url(../img/LogoPro_desctop.png) no-repeat center, linear-gradient(225deg, #38464b, #6f8994);
     background-size: contain;
@@ -272,13 +296,12 @@ header {
       padding: 15px;
       box-shadow: 10px 20px 17px rgba(0, 0, 0, .2);
       color: @textColor;
-      
       hr {
         border-top: 1px solid @textColor;
       }
 
       @media screen and (max-width: 767px) {
-        width: 90%;
+        width: 100%;
       }
       @media screen and (min-width: 768px) and (max-width: 992px) {
         width: 700px;
@@ -467,10 +490,6 @@ footer {
   }
 }
 
-
-
-//
-
 .bg-success,
 .bg-danger{
   height: 50px;
@@ -517,7 +536,64 @@ footer {
   z-index: -2;
   .transition;
   .title {
-    background: red;
+    background: #111;
+    box-shadow: 0 0 22px rgba(0,0,0,1);
+    border: 1px solid #222;
+    min-height: 400px;
+    padding: 0 20px;
+    .transition;
+    @media screen and (max-width: 768px) {
+      min-height: 1px;
+    }
+  }
+}
+
+.preview .title {
+
+  .description {
+    color: #b3b3b3;
+    margin-top: 30px;
+    height: 370px;
+    @media screen and (max-width: 768px) {
+      margin-top: 5px;
+      height: 400px;
+    }
+    a {
+      position: absolute;
+      bottom: 20px;
+      height: 30px;
+      right: 20px;
+      border: 1px solid #444;
+      line-height: 30px;
+      padding: 0 15px;
+      color: #b3b3b3;
+      text-decoration: none;
+      .transition;
+      &:hover {
+        color: #0063a2;
+        border: 1px solid #0063a2;
+      }
+    }
+  }
+  .pic {
+    background-size: contain !important;
     height: 400px;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .icon-close {
+    position: absolute;
+    font-size: 22px;
+    color: #dedede;
+    right: 0;
+    top: 0;
+    margin: 5px;
+    cursor: pointer;
+    z-index: 23;
+    .transition;
+    &:hover {
+      color: #ff5142;
+    }
   }
 }
